@@ -66,6 +66,7 @@
     <Content Include="css\nivo-slider.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\arrows.png" />
     <Content Include="images\dream.jpg" />
     <Content Include="images\face.jpg" />
     <Content Include="images\favo.jpg" />
@@ -122,6 +123,7 @@
     <Content Include="js\jquery.nivo.slider.pack.js" />
     <Content Include="js\respond.min.js" />
     <Content Include="js\tags.js" />
+    <Content Include="MyPlugin\DannyImagesShow.js" />
     <Content Include="MyPlugin\DannyTableUI.js" />
     <Content Include="old.html" />
     <Content Include="OldPages\index.html" />

@@ -5,6 +5,7 @@
     <title></title>
     <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
     <script src="MyPlugin/DannyTableUI.js"></script>
+    <script src="MyPlugin/DannyImagesShow.js"></script>
     <style>
         .evenc {
             background-color: #ff6a00;
@@ -28,6 +29,39 @@
 
         .hoverc1 {
             background-color: red;
+        }
+
+        #imgDiv {
+            /*border: solid 1px red;
+            height: 400px;
+            width: 100%;
+            background-color: #808080;
+            background-image: url('images/photo/2.JPG');
+            background-position:center;
+            background-size:100% 100%;*/
+        }
+
+        .left {
+            /*height:30px;
+             width:30px;
+            background-repeat: no-repeat;*/
+            display: block;
+            width: 30px;
+            height: 30px;
+            background: url(images/arrows.png) no-repeat;
+            text-indent: -9999px;
+            border: 0;
+        }
+
+        .right {
+            display: block;
+            width: 30px;
+            height: 30px;
+            background: url(images/arrows.png) no-repeat;
+            text-indent: -9999px;
+            border: 0;
+            right: 15px;
+            background-position: -30px 0;
         }
     </style>
 </head>
@@ -64,6 +98,13 @@
             <td>333</td>
         </tr>
     </table>
+
+
+    <div id="imgDiv">
+        
+    </div>
+
+
     <script>
         var myClass = {
             evenRowClass: 'evenc1',
@@ -71,6 +112,9 @@
             hoverRowClass: 'hoverc1'
         };
         $("#test").dannyTableUI(myClass);
+
+
+        $("#imgDiv").dannyImagesShow();
     </script>
 </body>
 
