@@ -66,7 +66,7 @@
     </style>
 </head>
 <body>
-    <table id="test">
+   <!-- <table id="test">
         <tr>
             <td>111</td>
             <td>111</td>
@@ -97,7 +97,7 @@
             <td>333</td>
             <td>333</td>
         </tr>
-    </table>
+    </table>-->
 
 
     <div id="imgDiv">
@@ -111,10 +111,14 @@
             oddRowClass: 'oddc1',
             hoverRowClass: 'hoverc1'
         };
-        $("#test").dannyTableUI(myClass);
+        //$("#test").dannyTableUI(myClass);
 
-
-        $("#imgDiv").dannyImagesShow();
+        var opt = {
+            height: '500px',
+            width: '100%',
+            imgs: ['images/photo/6.JPG', 'images/photo/7.JPG', 'images/photo/8.JPG', 'images/photo/9.JPG']
+        };
+        $("#imgDiv").dannyImagesShow(opt);
     </script>
 </body>
 
