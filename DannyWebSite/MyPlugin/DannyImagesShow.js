@@ -23,7 +23,7 @@
         };
         //合并用户自定义属性，默认属性
         var options = $.extend(defaults, options);
-        var gNumber=0;
+        var gNumber = 0;
         this.each(function () {
             var imgDiv = $(this);
             imgDiv.css("height", options.height);
@@ -46,22 +46,14 @@
             var btnNext = $(".right");
 
             btnPrev.click(function () {
-                var n = getImagesNum(1, options.imgs.length);
-                while (n === gNumber) {
-                    n = getImagesNum(1, options.imgs.length);
-                }
-                gNumber = n;
+                var n = getImagesIndex();
                 $("#imgDiv").hide();
                 imgDiv.css("background-image", 'url("' + options.imgs[n - 1] + '")');
                 $("#imgDiv").slideDown();
             });
 
             btnNext.click(function () {
-                var n = getImagesNum(1, options.imgs.length);
-                while (n === gNumber) {
-                    n = getImagesNum(1, options.imgs.length);
-                }
-                gNumber = n;
+                var n = getImagesIndex();
                 $("#imgDiv").hide();
                 imgDiv.css("background-image", 'url("' + options.imgs[n - 1] + '")');
                 $("#imgDiv").slideDown();
@@ -69,15 +61,13 @@
 
             $("#leftbar").bind("mouseover", function () {
                 $("#leftbarButton").show();
-            });
-            $("#leftbar").bind("mouseout", function () {
+            }).bind("mouseout", function () {
                 $("#leftbarButton").hide();
             });
 
             $("#rightbar").bind("mouseover", function () {
                 $("#rightbarButton").show();
-            });
-            $("#rightbar").bind("mouseout", function () {
+            }).bind("mouseout", function () {
                 $("#rightbarButton").hide();
             });
 
@@ -86,12 +76,24 @@
         });
 
         //获取随机数
-        var getImagesNum = function (under, over) {
+        var getRandomNum = function (under, over) {
             switch (arguments.length) {
                 case 1: return parseInt(Math.random() * under + 1);
                 case 2: return parseInt(Math.random() * (over - under + 1) + under);
                 default: return 0;
             }
-        }
+        };
+
+        //获取随机照片索引
+        var getImagesIndex = function () {
+            var n = getRandomNum(1, options.imgs.length);
+            while (n === gNumber) {
+                n = getRandomNum(1, options.imgs.length);
+            }
+            gNumber = n;
+            return n;
+        };
     }
 })(jQuery);
+
+//test
